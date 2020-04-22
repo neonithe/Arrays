@@ -3,7 +3,7 @@ package org.example;
 public class Strings {
 
     public static void main(String[] args){
-    p10();
+    p12();
     }
     public static void p1(){
     //What is the length of the String: "Java" ?
@@ -94,8 +94,26 @@ public class Strings {
         }
     }
     public static void p11(){
+    //Convert the following String: "ThisShouldBeConverted" to a char array. Iterate through the
+    //char array and print out each element.
+    String txt ="ThisShouldBeConverted";
+    char[] charArray = new char[txt.length()];
 
+        for(int i=0; i<txt.length(); i++){
+            charArray[i] = txt.charAt(i);
+        }
+        for(char print :charArray) {
+            System.out.println(print);
+        }
     }
+    public static void p12() {
+        //Convert the following char[]: {'J','a','v','a'} to a String and print it out.
+        char[] array = {'J', 'a', 'v', 'a'};
 
-
+        for(int i=0; i<array.length; i++ ){
+           String a = String.valueOf(array[i]);
+                System.out.print(a);
+        }
+       // System.out.println(a);
+    }
 }
