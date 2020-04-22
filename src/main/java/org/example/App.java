@@ -15,7 +15,7 @@ public class App
     public static void main( String[] args )
     {
         //System.out.println("P2 inte klar kan inte få return value -1 ??? vet inte med denna???");
-       p10();
+
 
 
     }
@@ -147,7 +147,7 @@ public class App
                     System.out.print(arrayInput[i]+",");
                 }
             }
-    }    //Lär dig och förklara koden
+    }    //Behöver öva mer
     public static void p8(){
     /*Write a program which will remove the duplicate elements of a given
     array [20, 20, 40, 20, 30, 40, 50, 60, 50].
@@ -158,7 +158,7 @@ public class App
         List<Integer> cleanList = numbersList.stream().distinct().collect(Collectors.toList());
         System.out.println(cleanList);
 
-    }    //Kolla om man kan göra på något annat sätt
+    }    //Behöver öva mer
     public static void p9(){
     /*Write a method which will add elements in an array. Remember that arrays are fixed in size
     so you need to come up with a solution to “expand” the array.*/
@@ -179,7 +179,7 @@ public class App
         for ( int j=0; j<names.size(); j++ )
             System.out.println("element " + j + ": " + names.get(j) );
 
-    }    //Skriv om koden och lär dig den
+    }    //Behöver öva mer
     public static void p10() {
     /*Write a program which will represent multiplication table stored in multidimensional array.
     Hint: You have two-dimensional array with values [[1,2,3,4,5,6,7,8,9,10], [1,2,3,4,5,6,7,8,9,10]]*/
@@ -192,7 +192,25 @@ public class App
      in an array and print that array. After that reverse the array elements so that the first element
      becomes the last element, the second element becomes the second to last element, etc. Do not just
      reverse the order in which they are printed. You need to change the way they are stored in the array.*/
+        //Run InputRev
 
+    }
+    public static void p12(){
+    /*
+    Write a program which will print the diagonal elements of twodimensional array.
+    Expected output: 1 4 9
+    */
+    // c obj149
+    }
+    public static void p13(){
+    /*
+    Create two arrays with arbitrary size and fill one with random numbers. Then copy over the numbers
+    from the array with random numbers so that the even numbers are located in the rear (the right side)
+    part of the array and the odd numbers are located in the front part (the left side).
+
+    int[][] {1,2,4,8,9,10} {1,2,4,8,9,10}
+
+    */
 
     }
     public static void tester(){

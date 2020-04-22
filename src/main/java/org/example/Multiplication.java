@@ -10,7 +10,7 @@ public class Multiplication {
         // x = horizontel y = vertical
         int[][] numbers = new int[10][10];
 
-        numbers = timesTable(10, 10);
+        numbers = timesTable(3, 3);
 
         for (int x = 0; x < numbers.length; x++) {
             for (int y = 0; y < numbers.length; y++) {
