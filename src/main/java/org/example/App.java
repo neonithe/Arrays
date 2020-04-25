@@ -1,21 +1,17 @@
 package org.example;
 
 import java.util.*;
-import java.util.stream.Collectors;
-
-import static org.example.Multiplication.multi;
-import static org.example.Multiplication.multi2;
 
 /**
- * Hello world!
- *
+ * Week 3 exercises (Array is sooo damn hard), just my opinion.
  */
 public class App 
 {
+    private static Scanner numObj = new Scanner(System.in);
     public static void main( String[] args )
     {
         //System.out.println("P2 inte klar kan inte få return value -1 ??? vet inte med denna???");
-
+    p4();
 
 
     }
@@ -27,7 +23,7 @@ public class App
 
         int[] indexOf = {1,2,3,4,5,6,7,8,9};
             for(int i=0; i<indexOf.length; i++){
-                System.out.print(indexOf[i]+",");
+                System.out.print(indexOf[i]+" ");
             }
     }
     public static void p2(){
@@ -36,14 +32,16 @@ public class App
         return -1 as value. Expected output: Index position of number 5 is: 2.
          */
 
-        int[] indexOf = {0,2,5,16,32,64};
+        int[] indexOf = {64,32,16,8,4,2,0};
 
-            int indexFound = Arrays.binarySearch(indexOf,5);
-            int indexNotFound = Arrays.binarySearch(indexOf, -1);
-
-            System.out.println(indexFound);
-            System.out.println(indexNotFound);
-
+            int index =5;
+            int print = indexOf[index];
+            int a = indexOf.length;
+                    if (a < index) {
+                        System.out.println("-1");
+                    }else {
+                        System.out.println(print);
+            }
 
 
     }
@@ -51,59 +49,40 @@ public class App
         /*Write a program which will sort string array.
         Expected output: String array: [Paris, London, New York, Stockholm]
         Sort string array: [London, New York, Paris, Stockholm]*/
-        ArrayList<String> cityArray = new ArrayList<String>();
-            cityArray.add("Paris");
-            cityArray.add("London");
-            cityArray.add("New York");
-            cityArray.add("Stockholm");
+        String[] array = {"Paris", "London", "New York", "Stockholm"};
 
+        Arrays.sort(array);
+            String a = Arrays.toString(array);
+                System.out.println(a);
+        /* Bättre alternativ
+        Arrays.sort(array);
+            System.out.println(Arrays.toString(array));
+        */
 
-            for (String beforeSort : cityArray){
-                System.out.print(beforeSort+",");
-
-            }
-            System.out.println("");
-                Collections.sort(cityArray);
-            System.out.println("Sorterad");
-
-            for (String afterSort : cityArray){
-                System.out.print(afterSort+",");
-            }
     }
     public static void p4(){
     /*Write a program which will copy the elements of one array into another array.
     Expected output: Elements from first array: 1 15 20
     Elements from second array: 1 15 20*/
-        int[] arrayOne={1,15,20};
-        int[] arrayTwo=new int[arrayOne.length]; //Length är antalet element i en array
+        int[] arrayOne = {1,2,3,4,5,6,7};
+        int[] arrayTwo = Arrays.copyOf(arrayOne,arrayOne.length);
 
-        // Listan som ska få kopian = Det som ska kopieras (Listan, antalet i listan)
-            arrayTwo= Arrays.copyOf(arrayOne,arrayOne.length);
-        // i=index=0 ; 0<antalet i lista ; 0 + 1 ;
-                for(int i=0; i<arrayTwo.length; i++){
-        // lista[0] + 1,2,3 osv tills det är slut
-                    System.out.print(arrayTwo[i]+", ");
-                }
+            System.out.println("Array one: "+Arrays.toString(arrayOne));
+            System.out.println("Array two: "+Arrays.toString(arrayTwo));
 
 
     }
     public static void p5(){
     /*Create a two-dimensional string array [2][2]. Assign values to the 2d array containing
     any Country and City. Expected output: France Paris Sweden Stockholm*/
-    /*    String[] cityArray = new String[2][2];
 
-            cityArray[0][0] ="France Paris";
-            cityArray[0][1] ="Sweden Stockholm ";
-            cityArray[1][0] ="Finland Helsinki";
-            cityArray[1][0] ="Germany Berlin";
-
-                for(int i=0; i<cityArray.length; ++i){
-                    for(int j=0; j<cityArray.length; ++j){
-                        System.out.println(cityArray[i][j]);
-                        System.out.print(cityArray[i]);
-                    }
-                }*/
-    }       //Denna är inte färdig
+        String[][] array = {{"France", "Paris"}, {"Sweden", "Stockholm"}};
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+        }
+    }
     public static void p6(){
         /*Write a program which will set up an array to hold the next values in this
         order: 43, 5, 23, 17, 2, 14 and print the average of these 6 numbers.
@@ -115,53 +94,75 @@ public class App
                 sum = sum + intAvarage[i];
             }
         ************************************************************************************/
-        double[] intAvarage = {43,5,23,17,2,14};
-        double sum=0;
+        int[] arrayAvarage = {43,5,23,17,2,14};
+        double sum =0;
+        double sum2 =0;
+        double elements = arrayAvarage.length;
 
-        for (double num : intAvarage){
-                sum = sum+num;
-            }
-            double avarage = sum / intAvarage.length;
+        for(int num : arrayAvarage){
+            sum = sum+num;
+            sum2 = sum / elements;
 
-                System.out.println("Antal element: "+intAvarage.length);
-                System.out.println("Summa alla element: "+sum);
-                System.out.format("Avarage: %.1f", avarage);
+        }System.out.printf("%.1f",sum2);
 
     }
     public static void p7(){
     /*Write a program which will set up an array to hold 10 numbers and print out only the uneven numbers.
      Expected output: Array: 1 2 4 7 9 12 Odd Array: 1 7 9
+    int num =7;
+    int sum =0;
+       if (num%2 == 0){
+           System.out.println("Yep");
+       }else{
+           System.out.println("Nepp");
+       } // Ska ge "nepp" då det är udda
     */
-        int[] arrayInput = {1,2,4,7,9,12};
 
-            System.out.println("Even");
-            for (int i=0; i<arrayInput.length; i++){
-                if (arrayInput[i]%2 == 0) {
-                    System.out.print(arrayInput[i]+",");
-                }
+        int[] array = {1,2,3,4,5,6,7,8,9,10};
+
+        System.out.print("Even: ");
+        for(int i=0; i<array.length; i++){
+            if(array[i]%2 == 0){
+                System.out.print(array[i]+",");
             }
-            System.out.println("");
-            System.out.println("Odd");
-            for (int i=0; i<arrayInput.length; i++) {
-                if (arrayInput[i]%2 != 0){
-                    System.out.print(arrayInput[i]+",");
-                }
+        }
+        System.out.println();
+        System.out.print("Odd: ");
+        for(int i=0; i<array.length; i++){
+            if(array[i]%2 != 0){
+                System.out.print(array[i]+",");
             }
-    }    //Behöver öva mer
+        }
+    }
     public static void p8(){
     /*Write a program which will remove the duplicate elements of a given
     array [20, 20, 40, 20, 30, 40, 50, 60, 50].
     Expected output: Array: 20 20 40 20 30 40 50 60 50
     Array without duplicate values: 20 40 30 50 60*/
+
+    /*ArrayList > förstår inte riktigt koden (Funkar men skrotad för nu)
         ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(20, 20, 40, 20, 30, 40, 50, 60, 50));
         System.out.println(numbersList);
         List<Integer> cleanList = numbersList.stream().distinct().collect(Collectors.toList());
         System.out.println(cleanList);
+    */
 
-    }    //Behöver öva mer
+    }       //Behöver öva mer
     public static void p9(){
     /*Write a method which will add elements in an array. Remember that arrays are fixed in size
     so you need to come up with a solution to “expand” the array.*/
+
+    String[] array = {"Sofia","Linn"};
+    String[] array2 = new String[array.length+1];           //Resize array2 to add another element
+
+        for(int i=0; i<array.length; i++)                   //Add all elements from array to array2
+            array2[i] = array[i];
+            array2[array.length] = "Hannah";                //Add the new element to array2
+
+        System.out.println("Array1: "+Arrays.toString(array));  //Print array without adding
+        System.out.println("Array2: "+Arrays.toString(array2)); //Print array2 with new element
+
+ /* ArrayList
         // Create an ArrayList that holds references to String
         ArrayList<String> names = new ArrayList<String>();
 
@@ -178,48 +179,97 @@ public class App
         // Access and print out the Objects
         for ( int j=0; j<names.size(); j++ )
             System.out.println("element " + j + ": " + names.get(j) );
-
-    }    //Behöver öva mer
-    public static void p10() {
+*/
+    }
+    public static void p10(){
     /*Write a program which will represent multiplication table stored in multidimensional array.
     Hint: You have two-dimensional array with values [[1,2,3,4,5,6,7,8,9,10], [1,2,3,4,5,6,7,8,9,10]]*/
-    multi2();
 
-    }
-    public static void p11() {
+        int[][] tableOfNum = {{1,2,3,4,5,6,7,8,9,10},{1,2,3,4,5,6,7,8,9,10}};
+
+        int xLength = tableOfNum[0].length;
+        int yLength = tableOfNum[1].length;
+
+        int[][] multiTable = new int[xLength][yLength];
+        for(int x=0; x < multiTable.length; x++){
+            for(int y=0; y < multiTable.length; y++){
+                multiTable[x][y] = (x+1)*(y+1);
+            }
+        }
+        tableOfNum = multiTable;
+
+        for(int x=0; x < tableOfNum.length; x++){
+            for(int y=0; y < tableOfNum.length; y++){
+                System.out.print("      "+tableOfNum[x][y]);
+            }
+            System.out.println();
+        }
+
+    }   //Behöver öva mer på dessa för att bli bättre
+    public static void p11(){
     /*Write a program that ask the user for an integer and repeat that question until user give you a
     specific value that user already has been told about as a message in your program. Store these
      in an array and print that array. After that reverse the array elements so that the first element
      becomes the last element, the second element becomes the second to last element, etc. Do not just
      reverse the order in which they are printed. You need to change the way they are stored in the array.*/
-        //Run InputRev
+        System.out.print("How many numbers do wish to add to the list? :");
+        int amount = numObj.nextInt();
+
+        int[] array = new int[amount];
+        for (int i=0; i < array.length; i++){
+            System.out.print("Nr " +(i+1)+" : ");
+            array[i] = numObj.nextInt();
+        }
+        for(int i=0; i < array.length/2; i++) {
+            int reverse = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = reverse;
+        }
+        for (int i=0; i< array.length; i++){
+            System.out.println("Number "+(i+1)+" : ");
+            System.out.println(array[i]+"\n");
+        }
+        /*
+        Först betsämma hur många element det ska vara array[5]
+        Sedan lägg till värde för varje element array[0] = {1} array[1] = {2} osv
+        Sedan lägg om dem så sista värdet kommer först array[0] = array[1]
+        Sedan skriv ut listan
+        */
 
     }
-    public static void p12(){
+    public static void p12() {
     /*
     Write a program which will print the diagonal elements of twodimensional array.
     Expected output: 1 4 9
     */
-    // c obj149
-    }
+    //Samma som p10
+        int[][] tableOfNum;
+
+        int[][] multiTable = new int[3][3];
+        for (int x = 0; x < multiTable.length; x++) {
+            for (int y = 0; y < multiTable.length; y++) {
+                multiTable[x][y] = (x + 1) * (y + 1);
+            }
+        }
+        tableOfNum = multiTable;
+
+        for (int x = 0; x < tableOfNum.length; x++) {
+            for (int y = 0; y < tableOfNum.length; y++) {
+                System.out.print("      " + tableOfNum[x][y]);
+            }
+            System.out.println();
+        }
+    }   //Behöver öva mer samma som p10
     public static void p13(){
     /*
     Create two arrays with arbitrary size and fill one with random numbers. Then copy over the numbers
     from the array with random numbers so that the even numbers are located in the rear (the right side)
     part of the array and the odd numbers are located in the front part (the left side).
-
-    int[][] {1,2,4,8,9,10} {1,2,4,8,9,10}
-
+    P7 Odd / Even
+    int[] {1,2,3,4,5,6,7,8,9,10}  int[] {TOM}
     */
+    p13();
 
-    }
-    public static void tester(){
-
-    String[] names = new String[0];
-        names = StringArrayUtil.add(names,"Mattias Andersson");
-        names = StringArrayUtil.add(names, "Michelle Johansson");
-        names = StringArrayUtil.addAndSort(names, "Ameer Rasheed");
-        
-        System.out.println(Arrays.toString(names));
     }
 }
+
