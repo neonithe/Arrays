@@ -4,12 +4,47 @@ import java.util.Arrays;
 
 public class Tests {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
+        int[] arrInput = {20, 20, 40, 20, 30, 40, 50, 60, 50};
+        int length = arrInput.length;
+        length = duplicateElement(arrInput, length);
+        // printing elements
+        for(int a = 0; a < length; a++)
+        {
+            System.out.print(arrInput[a] + " hello");
+        }
+        System.out.println("Hello");
+    }
+
+    public static int duplicateElement(int[] arrNumbers, int num)
+    {
+        if(num == 0 || num == 1)
+        {
+            return num;
+        }
+        int[] temp = new int[num];
+        int b = 0;
+        for(int a = 0; a < num - 1; a++)
+        {
+            if(arrNumbers[a] != arrNumbers[a + 1])
+            {
+                temp[b++] = arrNumbers[a];
+            }
+        }
+        temp[b++] = arrNumbers[num - 1];
+        for(int a = 0; a < b; b++)
+        {
+            arrNumbers[a] = temp[a];
+        }
+        return b;
+    }
+}
     /*Write a program which will remove the duplicate elements of a given
     array [20, 20, 40, 20, 30, 40, 50, 60, 50].
     Expected output: Array: 20 20 40 20 30 40 50 60 50
     Array without duplicate values: 20 40 30 50 60*/
-
+/*
         int[] array = {20, 20, 40, 20, 30, 40, 50, 60, 50};
         //20,20,20,30,40,40,50,50,60
             Arrays.sort(array);
@@ -36,7 +71,7 @@ public class Tests {
         }
     }
 }
-
+*/
   /*
     int arr[] = {10,20,20,30,30,40,50,50};
     int length = arr.length;

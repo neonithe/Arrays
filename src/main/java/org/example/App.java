@@ -147,7 +147,7 @@ public class App
         System.out.println(cleanList);
     */
 
-    }       //Behöver öva mer
+    }       //fattar noll för att jag inte fattar denna eller får ihop denna.
     public static void p9(){
     /*Write a method which will add elements in an array. Remember that arrays are fixed in size
     so you need to come up with a solution to “expand” the array.*/
@@ -237,7 +237,7 @@ public class App
         */
 
     }
-    public static void p12() {
+    public static void p12(){
     /*
     Write a program which will print the diagonal elements of twodimensional array.
     Expected output: 1 4 9

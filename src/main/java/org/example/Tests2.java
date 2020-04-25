@@ -29,33 +29,23 @@ public class Tests2 {
 
     public static void tests2() {
 
-        int[] arr = {1, 1, 2, 2, 1, 1};
+        int[] arr  = {1, 1, 2, 2, 1, 1};
+        int[] arrs = {1, 1, 1, 1, 2};
         int n = arr.length;
 
         int x = 0;
         int[] arr2 = new int[n];
-        int[] arr3 = new int[n];
 
-      arr2[0] = arr[0];
-    /*    for (int i = 0; i < arr.length-1; i++) {
-            for (int j = 0; j < arr2.length; j++) {
-                if (arr[i] == arr2[j]) {
+        int j=0;
 
-                }else { arr2[j] = arr[i];}
+        for (int i = 0; i < arr.length; i++) {
+            if( arr[i] == arr2[j] ){
+
             }
-        }*/
-        int xy=0;
-        int nn=0;
-        if (arr[0] == arr2[0]){
-            xy++;
-        }else { nn++;
-
-        System.out.println(xy);
-        System.out.println(nn);
-        System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(arr2));
+        }
     }
 }
+
 /*        int arr[] = {1, 2, 2, 3, 4, 4, 4, 5, 5};
         int n = arr.length;
 
