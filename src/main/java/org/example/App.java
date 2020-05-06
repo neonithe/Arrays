@@ -8,6 +8,8 @@ import java.util.*;
 public class App 
 {
     private static Scanner numObj = new Scanner(System.in);
+    public boolean number2;
+
     public static void main( String[] args )
     {
         //System.out.println("P2 inte klar kan inte få return value -1 ??? vet inte med denna???");
@@ -140,6 +142,21 @@ public class App
     Expected output: Array: 20 20 40 20 30 40 50 60 50
     Array without duplicate values: 20 40 30 50 60*/
 
+        int[] array = {20, 20, 40, 20, 30, 40, 50, 60, 50};
+        int[] temp = new int[5];
+        int j = 0;
+        Arrays.sort(array);
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] != array[i + 1]) {
+                temp[j++] = array[i];
+            }
+        }
+        temp[j++] = array[array.length - 1];
+
+        for (int i=0; i<temp.length; i++)
+            System.out.print(temp[i]+" ");
+
     /*ArrayList > förstår inte riktigt koden (Funkar men skrotad för nu)
         ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(20, 20, 40, 20, 30, 40, 50, 60, 50));
         System.out.println(numbersList);
@@ -147,7 +164,7 @@ public class App
         System.out.println(cleanList);
     */
 
-    }       //fattar noll för att jag inte fattar denna eller får ihop denna.
+    }       // Denna är klar men jag vet inte om den är rätt
     public static void p9(){
     /*Write a method which will add elements in an array. Remember that arrays are fixed in size
     so you need to come up with a solution to “expand” the array.*/

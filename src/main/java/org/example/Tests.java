@@ -4,8 +4,82 @@ import java.util.Arrays;
 
 public class Tests {
 
-    public static void main(String[] args)
-    {
+    public static int number = 1;
+    public int number2 = 1;
+
+    public static void main(String[] args) {
+/*
+    array [20, 20, 40, 20, 30, 40, 50, 60, 50].
+    Expected output: Array: 20 20 40 20 30 40 50 60 50
+    Array without duplicate values: 20 40 30 50 60*/
+
+        int[] array = {20, 20, 40, 20, 30, 40, 50, 60, 50};
+        int[] temp = new int[5];
+        int j = 0;
+        Arrays.sort(array);
+
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i] != array[i + 1]) {
+                temp[j++] = array[i];
+            }
+        }
+        temp[j++] = array[array.length - 1];
+
+
+
+        for (int i=0; i<temp.length; i++)
+            System.out.print(temp[i]+" ");
+    }
+
+}
+
+        // Först läs det första elementet sedan leta upp nästa element
+   /*     for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    System.out.print(" i "+array[i]+", ");
+                    System.out.print(" j "+array[i]+", ");
+                     array[i] = 0;
+                  //  delete(array,i);
+                }
+            }
+            System.out.println(Arrays.toString(array));
+        }
+        System.out.println(Arrays.toString(array));
+    }
+
+
+    public static void delete(int[] array, int index) {
+        //Temp array with new size
+        int[] useList = new int[array.length - 1];
+        int nonDeletedElements = array.length - (index + 1);
+
+        //Copy the elements before the index pos
+        System.arraycopy(array, 0, useList, 0, index);
+        //Copy the elements after the index pos
+        System.arraycopy(array, index + 1, useList, index, nonDeletedElements);
+        //Update person array with new list
+        array = useList;
+            System.out.print(Arrays.toString(array)+", ");
+    }
+}
+
+/*
+        //Find index via id number (target)
+        int index =0;
+
+        for(int i=0; i < person.length; i++){
+            if(person[i].getPersonId() == target){
+                index =i;
+            }
+        }
+
+
+
+    }*/
+
+
+ /*   {
         int[] arrInput = {20, 20, 40, 20, 30, 40, 50, 60, 50};
         int length = arrInput.length;
         length = duplicateElement(arrInput, length);
@@ -39,7 +113,7 @@ public class Tests {
         }
         return b;
     }
-}
+} */
     /*Write a program which will remove the duplicate elements of a given
     array [20, 20, 40, 20, 30, 40, 50, 60, 50].
     Expected output: Array: 20 20 40 20 30 40 50 60 50
