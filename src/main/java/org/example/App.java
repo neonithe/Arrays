@@ -13,10 +13,24 @@ public class App
     public static void main( String[] args )
     {
         //System.out.println("P2 inte klar kan inte få return value -1 ??? vet inte med denna???");
-    p4();
 
+        //    p1();
+        //    p2();
+        //    p3();
+        //    p4();
+        //    p5();
+        //    p6();
+        //    p7();
+        //    p8();
+        //    p9();
+        //    p10();
+        //    p11();
+        //    p12();
 
+        //  -- New Class: All code there
+        //    p13();
     }
+
     public static void p1(){
         /*
         Write a program which will store elements in an array of type ‘int’ and print it out.
@@ -164,7 +178,7 @@ public class App
         System.out.println(cleanList);
     */
 
-    }       // Denna är klar men jag vet inte om den är rätt
+    }    // Denna är klar men jag vet inte om den är rätt
     public static void p9(){
     /*Write a method which will add elements in an array. Remember that arrays are fixed in size
     so you need to come up with a solution to “expand” the array.*/
@@ -285,6 +299,7 @@ public class App
     P7 Odd / Even
     int[] {1,2,3,4,5,6,7,8,9,10}  int[] {TOM}
     */
+
     p13();
 
     }
